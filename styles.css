@@ -1,0 +1,46 @@
+:root {
+  --primary: #1b262c;
+  --accent: #0f4c75;
+  --light: #bbe1fa;
+  --font: 'Noto Sans KR', sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: var(--font); color: var(--primary); line-height:1.6; }
+.container { width:90%; max-width:1000px; margin:0 auto; }
+
+/* 헤더 */
+header { background: var(--primary); color: #fff; }
+header .container { display:flex; align-items:center; justify-content:space-between; padding:1rem 0; }
+.logo { font-size:1.5rem; }
+nav a { color:#fff; margin-right:1rem; text-decoration:none; }
+#nav-toggle { display:none; background:none; border:none; color:#fff; font-size:1.5rem; }
+
+/* 히어로 섹션 */
+.hero { background: var(--accent) url('https://source.unsplash.com/featured/?office') center/cover no-repeat; color:#fff; text-align:center; padding:4rem 0; }
+.hero h2 { font-size:2.5rem; margin-bottom:0.5rem; }
+.hero p { margin-bottom:1rem; }
+.btn { display:inline-block; background:var(--light); color:var(--primary); padding:0.75rem 1.5rem; text-decoration:none; border-radius:5px; }
+
+/* 섹션 제목 */
+h3 { margin:2rem 0 1rem; text-align:center; }
+
+/* 카드 레이아웃 */
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; }
+.card { background:#fff; padding:1.5rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); text-align:center; }
+
+/* 폼 */
+form { display:flex; flex-direction:column; gap:0.75rem; max-width:500px; margin:0 auto; }
+input, textarea { padding:0.75rem; border:1px solid #ccc; border-radius:4px; }
+textarea { resize:vertical; }
+
+/* 푸터 */
+footer { background:#f1f1f1; text-align:center; padding:1rem 0; margin-top:2rem; }
+
+/* 반응형 네비게이션 (mobile) */
+@media(max-width:600px) {
+  nav a { display:none; }
+  #nav-toggle { display:block; }
+  nav.open a { display:block; margin:0.5rem 0; }
+  nav.open { flex-direction:column; }
+}
