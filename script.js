@@ -1,15 +1,25 @@
-// 모바일 메뉴 토글
-const nav = document.getElementById('nav');
-const toggle = document.getElementById('nav-toggle');
-toggle.addEventListener('click', () => {
-  nav.classList.toggle('open');
+document.getElementById('nav-toggle').addEventListener('click', () => {
+  document.querySelector('.menu').classList.toggle('open');
 });
 
-// 부드러운 스크롤
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href'))
-      .scrollIntoView({ behavior: 'smooth' });
-  });
+let idx = 0;
+const slides = document.querySelectorAll('.slide');
+const showSlide = i => {
+  slides.forEach(s => s.classList.remove('active'));
+  slides[i].classList.add('active');
+};
+
+document.querySelector('.next').addEventListener('click', () => {
+  idx = (idx + 1) % slides.length;
+  showSlide(idx);
 });
+
+document.querySelector('.prev').addEventListener('click', () => {
+  idx = (idx - 1 + slides.length) % slides.length;
+  showSlide(idx);
+});
+
+setInterval(() => {
+  idx = (idx + 1) % slides.length;
+  showSlide(idx);
+}, 5000);
