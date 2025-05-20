@@ -1,19 +1,21 @@
 /* styles.css */
-
 /* Reset & Variables */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-:root { --dark:#1b262c; --accent:#0f4c75; --light:#bbe1fa; --font:'Noto Sans KR', sans-serif; }
+:root { --dark:#1b262c; --accent:#0f4c75; --light:#bbe1fa; --font:'Noto Sans KR',sans-serif; }
 body { font-family:var(--font); color:#333; line-height:1.6; }
 .container { width:90%; max-width:1000px; margin:0 auto; }
 
 /* Header */
 header { background:var(--dark); }
 .header-inner { display:flex; align-items:center; justify-content:space-between; padding:1rem 0; }
-.logo img { height:50px; width:auto; display:block; }
+#logo-container { display:flex; align-items:center; }
+#logo-image { width:60px; height:auto; margin-right:0.5rem; }
+#logo-text { font-family:'Montserrat',sans-serif; font-weight:700; font-size:1rem; color:#fff; line-height:1.2; }
+
 nav { position:relative; }
 .menu { list-style:none; display:flex; gap:1rem; }
 .menu li { position:relative; }
-.menu a { display:block; padding:0.5rem; text-decoration:none; color:#fff; }
+.menu a { display:block; padding:0.5rem; color:#fff; text-decoration:none; }
 .dropdown-menu { display:none; position:absolute; top:100%; left:0; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.1); list-style:none; min-width:180px; }
 .dropdown-menu li a { color:var(--dark); padding:0.5rem 1rem; }
 .menu .dropdown:hover > .dropdown-menu { display:block; }
@@ -33,25 +35,15 @@ nav { position:relative; }
 /* Sections */
 section { padding:2rem 0; }
 h3 { text-align:center; margin-bottom:1rem; }
-
-/* About */
 #about p { text-align:center; max-width:800px; margin:0 auto; }
-
-/* Services */
 .cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:1rem; }
 .card { background:#fff; padding:1.5rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); text-align:center; }
 .card h4 { margin-bottom:0.5rem; color:var(--accent); }
-
-/* Contact */
 form { display:flex; flex-direction:column; gap:0.75rem; max-width:500px; margin:0 auto; }
 input, textarea { padding:0.75rem; border:1px solid #ccc; border-radius:4px; }
 textarea { resize:vertical; }
 form button { width:fit-content; align-self:flex-start; }
-
-/* Footer */
 footer { background:#f1f1f1; text-align:center; padding:1rem 0; }
-
-/* Responsive */
 @media(max-width:768px) {
   .menu { display:none; flex-direction:column; background:var(--dark); position:absolute; top:100%; right:0; width:200px; }
   .menu.open { display:flex; }
