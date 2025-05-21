@@ -135,9 +135,11 @@ nav {
   max-width: 90%;
 }
 .hero-content h2 {
-  font-size: 3rem;
+  font-family: 'Playfair Display', serif;  /* 고급스러운 세리프체 */
+  font-size: 2.25rem;                      /* 살짝 줄인 크기 */
   color: #fff;
   margin-bottom: 1rem;
+  line-height: 1.2;
 }
 .hero-content p {
   font-size: 1.25rem;
